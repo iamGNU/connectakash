@@ -1,49 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="project.css">
-    <link rel="stylesheet" href="index.css">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Akash Anand</title>
+    <meta name="description" content="Projects built by Akash Anand: Rain Watch, Digital Diary and a Coin Flip game.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://connectakash.com/project.html">
+    <meta property="og:title" content="Projects | Akash Anand">
+    <meta property="og:description" content="Projects built by Akash Anand.">
+    <meta property="og:image" content="https://connectakash.com/resources/akash.jpeg">
+    <script>
+        // Apply a saved theme before the page draws, so it doesn't flash.
+        try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/project.css">
 </head>
 <body>
-
-    <header class="white whitebg">
-        <a class="name" href="index.html" target=""><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
-        <div class="nav-links gray-700">
-            <a class="resume" href="https://drive.google.com/file/d/1TLm_w_rVkbF2qodkF3ANcACY6byevHFD/view?usp=sharing" target="_blank">Resume</a>
-            <a href="project.html" target="">Projects</a>
-            <!--<a href="" target="_blank">About</a>
-            <a href="" target="_blank">Skills</a>
-            <a href="" target="_blank">Education</a>   
-            <a href="" target="_blank">Contect</a>-->
+    <header>
+        <a class="name" href="/"><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
+        <div class="header-actions">
+            <nav class="nav-links" aria-label="Main">
+                <a href="/#about">About</a>
+                <a href="/#skills">Skills</a>
+                <a href="/project.html" aria-current="page">Projects</a>
+                <a href="/resources/assetResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
         </div>
     </header>
 
-    <main>
+    <main class="projects">
+        <h1>Projects</h1>
         <div class="projects-container">
-            
-            <a href="https://github.com/iamGNU/rain_watch" target="_blank" class="project-card">
-                <div class="project-frame">
-                    <img src="/resources/rain_watch_logo.png" alt="Rain Watch Logo" class="project_class">
-                </div>
-                <h3>Rain Watch</h3>
-            </a>
 
-            <a href="https://github.com/iamGNU/DigitalDiary" target="_blank" class="project-card">
+            <article class="project-card">
                 <div class="project-frame">
-                    <img src="/resources/digitlaDiaryLogo.png" alt="Digital Diary Logo" class="project_class">
+                    <img src="/resources/rain_watch_logo.png" alt="Rain Watch logo" class="project-image">
                 </div>
-                <h3>Digital Diary</h3>
-            </a>
+                <div class="project-body">
+                    <h2>Rain Watch</h2>
+                    <p>Sends an SMS to your phone every morning when rain is forecast in your area, so you never forget your umbrella.</p>
+                    <ul class="chips"><li>Python</li><li>Weather API</li><li>SMS</li></ul>
+                    <div class="project-links">
+                        <a href="https://github.com/iamGNU/rain_watch" target="_blank" rel="noopener">View code</a>
+                    </div>
+                </div>
+            </article>
 
-            <a href="coin_flip_game.html" target="_blank" class="project-card">
+            <article class="project-card">
                 <div class="project-frame">
-                    <img src="/resources/flipCoinLogo1.png" alt="Coin flip game Logo" class="project_class">
+                    <img src="/resources/digitalDiaryLogo.jpg" alt="Digital Diary logo" class="project-image">
                 </div>
-                <h3>Coin Flip Game</h3>
-            </a>
-            
-            
+                <div class="project-body">
+                    <h2>Digital Diary</h2>
+                    <p>A backend for managing journal entries, with RESTful APIs for full create, read, update and delete operations, tested with Postman.</p>
+                    <ul class="chips"><li>Java</li><li>Spring Boot</li><li>MongoDB</li></ul>
+                    <div class="project-links">
+                        <a href="https://github.com/iamGNU/DigitalDiary" target="_blank" rel="noopener">View code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-frame">
+                    <img src="/resources/flipCoinLogo.jpg" alt="Coin Flip Game logo" class="project-image">
+                </div>
+                <div class="project-body">
+                    <h2>Coin Flip Game</h2>
+                    <p>A browser coin toss with a flip animation and a running count of heads and tails.</p>
+                    <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    <div class="project-links">
+                        <a href="/coin_flip_game.html" class="primary">Live demo</a>
+                        <a href="https://github.com/codecopakash/connectakash" target="_blank" rel="noopener">View code</a>
+                    </div>
+                </div>
+            </article>
+
         </div>
-        
-        
     </main>
 
+    <footer>
+        <p>Copyright &copy; Akash 2026 - Have a nice day</p>
+    </footer>
+    <script src="/theme.js"></script>
 </body>
+</html>

@@ -1,13 +1,118 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* ---------- Colour tokens (light) ---------- */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #eff6ff;
+  --surface: #ffffff;
+  --text: #111827;
+  --text-muted: #374151;
+  --text-subtle: #4b5563;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --border: #e5e7eb;
+  --chip-bg: #dbeafe;
+  --chip-text: #1d4ed8;
+  --footer-bg: #111827;
+  --footer-text: #d1d5db;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --icon-filter: none;
+  color-scheme: light;
 }
 
+/* ---------- Colour tokens (dark) ----------
+   By default the site follows the system setting. The theme toggle sets
+   data-theme="light" or "dark" on <html> to override it. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1120;
+    --bg-soft: #111827;
+    --surface: #1f2937;
+    --text: #f9fafb;
+    --text-muted: #d1d5db;
+    --text-subtle: #9ca3af;
+    --accent: #60a5fa;
+    --accent-strong: #93c5fd;
+    --border: #374151;
+    --chip-bg: #1e3a8a;
+    --chip-text: #dbeafe;
+    --footer-bg: #030712;
+    --footer-text: #9ca3af;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    --icon-filter: invert(1);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1120;
+  --bg-soft: #111827;
+  --surface: #1f2937;
+  --text: #f9fafb;
+  --text-muted: #d1d5db;
+  --text-subtle: #9ca3af;
+  --accent: #60a5fa;
+  --accent-strong: #93c5fd;
+  --border: #374151;
+  --chip-bg: #1e3a8a;
+  --chip-text: #dbeafe;
+  --footer-bg: #030712;
+  --footer-text: #9ca3af;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  --icon-filter: invert(1);
+  color-scheme: dark;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Header ---------- */
 header {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
   padding: 25px 60px;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--bg);
+}
+
+header a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.name {
+  font-size: 28px;
 }
 
 .first-name {
@@ -15,37 +120,90 @@ header {
 }
 
 .last-name {
-  font-weight: 100;
-}
-
-header a {
-  text-decoration: none;
-  color: #101828;
-  font-weight: bold;
-}
-
-.name {
-  font-size: 28px;
+  font-weight: 300;
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 12px 30px;
 }
 
 .nav-links a {
-  text-decoration: none;
   font-size: 16px;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 
 .nav-links a:hover {
-  color: #1d4ed8;
+  color: var(--accent-strong);
 }
 
-main {
-  background-color: #eff6ff;
+.nav-links a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 30px;
+}
+
+/* ---------- Dark mode toggle ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--border);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Show the moon in light mode (click to go dark), the sun in dark mode. */
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background-color: var(--bg-soft);
   padding: 70px 50px;
-  min-height: 536px;
 }
 
 .hero-section {
@@ -53,6 +211,8 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .hero-text {
@@ -60,20 +220,21 @@ main {
   flex-direction: column;
   align-items: flex-start;
   max-width: 500px;
-  margin-left: 150px;
-}
-
-.my-intro {
-  margin: 0 0 16px 0;
 }
 
 .hero-text h1 {
   font-size: 52px;
   line-height: 1.2;
+  margin: 0 0 16px 0;
 }
 
-.hero-text p {
+.highlight {
+  color: var(--accent);
+}
+
+.role {
   font-size: 20px;
+  color: var(--text-muted);
   margin: 0 0 24px 0;
 }
 
@@ -82,22 +243,25 @@ main {
   align-items: center;
   gap: 8px;
   padding: 12px 18px;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   font-size: 16px;
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: var(--border);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .icon {
   width: 18px;
   height: 18px;
-}
-
-.resume-button:hover {
-  background-color: #d1d5db;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  filter: var(--icon-filter);
 }
 
 .social-links {
@@ -107,12 +271,14 @@ main {
 }
 
 .social-links img {
+  display: block;
   width: 30px;
   height: 30px;
+  filter: var(--icon-filter);
   transition: transform 0.2s ease;
 }
 
-.social-links img:hover {
+.social-links a:hover img {
   transform: scale(1.1);
 }
 
@@ -121,7 +287,7 @@ main {
   width: 380px;
   height: 520px;
   flex-shrink: 0;
-  margin-right: 60px;
+  margin-right: 20px;
 }
 
 .blue-frame {
@@ -130,7 +296,7 @@ main {
   left: 20px;
   width: 100%;
   height: 100%;
-  background-color: #2563eb;
+  background-color: var(--accent);
   border-radius: 20px;
   transform: rotate(6deg);
   z-index: 1;
@@ -146,61 +312,174 @@ main {
   z-index: 2;
 }
 
+/* ---------- Content sections ---------- */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  scroll-margin-top: 20px;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin: 0 0 24px 0;
+}
+
+.section p,
+.section li {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+.section a {
+  color: var(--accent);
+}
+
+.alt-bg {
+  background-color: var(--bg-soft);
+}
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skill-group {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.skill-group h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.chips li {
+  font-size: 14px;
+  line-height: 1;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background-color: var(--chip-bg);
+  color: var(--chip-text);
+}
+
+.timeline-item {
+  border-left: 3px solid var(--accent);
+  padding: 4px 0 4px 20px;
+  margin-bottom: 24px;
+}
+
+.timeline-item h3 {
+  margin: 0 0 4px 0;
+  font-size: 19px;
+}
+
+.timeline-item p {
+  margin: 0;
+}
+
+.meta {
+  font-size: 15px;
+  color: var(--text-subtle);
+}
+
+/* ---------- Footer ---------- */
 footer {
-  background-color: #111827;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   text-align: center;
   padding: 24px;
 }
 
-footer h3 {
+footer p {
   margin: 0;
   font-size: 16px;
+  font-weight: 600;
 }
 
-.white {
-  color: #ffffff;
+/* ---------- Tablets and phones ---------- */
+@media (max-width: 900px) {
+  header {
+    padding: 20px 24px;
+  }
+
+  /* Name and toggle on the first row, menu on the second. */
+  .header-actions {
+    display: contents;
+  }
+
+  .theme-toggle {
+    order: 1;
+  }
+
+  .nav-links {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 48px 24px;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
+    gap: 48px;
+  }
+
+  .hero-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo-frame {
+    width: min(300px, 75vw);
+    height: auto;
+    aspect-ratio: 380 / 520;
+    margin-right: 0;
+  }
 }
 
-.whitebg {
-  background-color: #ffffff;
+@media (max-width: 480px) {
+  .name {
+    font-size: 24px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .role {
+    font-size: 18px;
+  }
+
+  .social-links {
+    gap: 24px;
+  }
 }
 
-.blue-50 {
-  color: #eff6ff;
-}
-
-.blue-100 {
-  color: #dbeafe;
-}
-
-.blue-600 {
-  color: #2563eb;
-}
-
-.blue-700 {
-  color: #1d4ed8;
-}
-
-.gray-50 {
-  color: #f9fafb;
-}
-
-.gray-200 {
-  color: #e5e7eb;
-}
-
-.gray-300 {
-  color: #d1d5db;
-}
-
-.gray-600 {
-  color: #4b5563;
-}
-
-.gray-700 {
-  color: #374151;
-}
-
-.gray-900 {
-  color: #111827;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
 }

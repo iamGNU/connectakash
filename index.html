@@ -1,50 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
-    <title>Akash Anand</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Akash Anand | Associate Research &amp; Development Engineer</title>
+    <meta name="description" content="Akash Anand is an Associate Research & Development Engineer and MCA graduate working with Java, Spring Boot, REST APIs and MongoDB.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://connectakash.com/">
+    <meta property="og:title" content="Akash Anand | Associate Research & Development Engineer">
+    <meta property="og:description" content="Portfolio, projects and resume of Akash Anand.">
+    <meta property="og:image" content="https://connectakash.com/resources/akash.jpeg">
+    <meta name="twitter:card" content="summary">
+    <script>
+        // Apply a saved theme before the page draws, so it doesn't flash.
+        try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="/index.css">
 </head>
 
 <body>
-    <header class="white whitebg">
-        <a class="name" href="https://connectakash.com/" target=""><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
-        <div class="nav-links gray-700">
-            <a class="resume" href="https://drive.google.com/file/d/1TLm_w_rVkbF2qodkF3ANcACY6byevHFD/view?usp=sharing" target="_blank">Resume</a>
-            <a href="project.html" target="">Projects</a>
-            <!--<a href="" target="_blank">About</a>
-            <a href="" target="_blank">Skills</a>
-            <a href="" target="_blank">Education</a>   
-            <a href="" target="_blank">Contect</a>-->
+    <header>
+        <a class="name" href="/"><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
+        <div class="header-actions">
+            <nav class="nav-links" aria-label="Main">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="/project.html">Projects</a>
+                <a href="/resources/assetResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
         </div>
-        
     </header>
-    <Main>
-        <div class="hero-section">
-            <div class="hero-text">
-                <h1 class="my-intro gray-900">Hi, I'm <span class="blue-600">Akash <br> Anand</span> </h1>
-                <p class="gray-700 my-intro">Software Engineer</p>
-                <p></p>
-                <a href="/resources/assetResume.pdf" download="AkashAnand_Resume" target="_blank">
-                    <button class="resume-button whitebg"><img src="/resources/downloadfile.png" alt="Download file Icon" class="icon"> Download Resume</button>
-                </a>
 
-                <!--Connect with me section -->
-                <div class="social-links">
-                    <a href="https://github.com/IamGNU" target="_blank"><img src="/resources/github.png" alt="codecopakash"></a>
-                    <a href="https://www.linkedin.com/in/IamGNU/" target="_blank"><img src="/resources/linkedin.png" alt="codecopakash"></a>
-                    <a href="https://leetcode.com/u/iamGnu/" target="_blank"><img src="resources/leetcode.png" alt="leetcode profile"></a>
-                    <a href="mailto:akashatwork2002@gmail.com" target="_blank"><img src="/resources/email.png" alt="akashatwork2002@gmial.com"></a>
+    <main>
+        <section class="hero">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="highlight">Akash <br> Anand</span></h1>
+                    <p class="role">Associate Research &amp; Development Engineer</p>
+                    <a class="resume-button" href="/resources/assetResume.pdf" download="AkashAnand_Resume.pdf">
+                        <img src="/resources/downloadfile.png" alt="" class="icon"> Download Resume
+                    </a>
+
+                    <!-- Connect with me -->
+                    <div class="social-links">
+                        <a href="https://github.com/IamGNU" target="_blank" rel="noopener"><img src="/resources/github.png" alt="GitHub profile"></a>
+                        <a href="https://www.linkedin.com/in/IamGNU/" target="_blank" rel="noopener"><img src="/resources/linkedin.png" alt="LinkedIn profile"></a>
+                        <a href="https://leetcode.com/u/iamGnu/" target="_blank" rel="noopener"><img src="/resources/leetcode.png" alt="LeetCode profile"></a>
+                        <a href="mailto:akashatwork2002@gmail.com"><img src="/resources/email.png" alt="Email akashatwork2002@gmail.com"></a>
+                    </div>
+                </div>
+
+                <!-- Photo frame -->
+                <div class="photo-frame">
+                    <div class="blue-frame"></div>
+                    <img src="/resources/akash.jpeg" alt="Portrait of Akash Anand" class="my-image">
                 </div>
             </div>
-            <!--Photo frame -->
-            <div class="photo-frame">
-                <div class="blue-frame"></div>
-                <img src="/resources/akash.jpeg" alt="" class="my-image">
-            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About me</h2>
+            <p>
+                I'm an MCA graduate from Amity University Noida and an Associate Research &amp; Development Engineer.
+                I enjoy building backend applications with Java and Spring Boot, designing REST APIs, and working
+                with databases like MongoDB and MySQL.
+            </p>
+            <ul>
+                <li>Co-author of <em>Cost-Effective Biomimicking Quadruped Robot for STEM Education</em>, accepted at ICEdge 2025, IISc Bangalore (IEEE, Scopus).</li>
+                <li>1st position in Code it Quizzlet 2.0 (2025).</li>
+                <li>LeetCode contest rating of 1372.</li>
+                <li>Pull request merged into the main branch of <a href="https://github.com/pcottle/learnGitBranching" target="_blank" rel="noopener">learnGitBranching</a>.</li>
+            </ul>
+        </section>
+
+        <div class="alt-bg">
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <div class="skill-groups">
+                    <div class="skill-group">
+                        <h3>Languages</h3>
+                        <ul class="chips"><li>Java</li><li>Python</li></ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Backend</h3>
+                        <ul class="chips"><li>Spring Boot</li><li>REST APIs</li></ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Databases</h3>
+                        <ul class="chips"><li>MySQL</li><li>MongoDB</li></ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Tools</h3>
+                        <ul class="chips"><li>Git</li><li>GitHub</li><li>Postman</li></ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Web</h3>
+                        <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+                    </div>
+                </div>
+            </section>
         </div>
-    </Main>
-    <Footer>
-        <h3 class="gray-300">Copyright &copy; Akash 2026 - Have a nice day</h3>
-    </Footer>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="timeline-item">
+                <h3>Master of Computer Applications</h3>
+                <p>Amity University, Noida</p>
+                <p class="meta">Aug 2024 – May 2026</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Bachelor of Computer Applications</h3>
+                <p>Gauhati University, Guwahati</p>
+                <p class="meta">Aug 2020 – May 2023</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; Akash 2026 - Have a nice day</p>
+    </footer>
+    <script src="/theme.js"></script>
 </body>
 </html>

@@ -1,64 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="coin_flip.css">
-    <link rel="stylesheet" href="index.css">  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coin Flip Game | Akash Anand</title>
+    <meta name="description" content="Toss a ₹10 coin and keep count of heads and tails.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://connectakash.com/coin_flip_game.html">
+    <meta property="og:title" content="Coin Flip Game | Akash Anand">
+    <meta property="og:description" content="Toss a coin and keep count of heads and tails.">
+    <meta property="og:image" content="https://connectakash.com/resources/flipCoinLogo.jpg">
+    <script>
+        // Apply a saved theme before the page draws, so it doesn't flash.
+        try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/coin_flip.css">
 </head>
 <body>
-
-    <header class="white whitebg">
-        <a class="name" href="index.html" target=""><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
-        <div class="nav-links gray-700">
-            <a class="resume" href="https://drive.google.com/file/d/1_hTi6sSeiiXCx00YEpdrVTIHkZ7M07dO/view?usp=sharing" target="_blank">Resume</a>
-            <a href="project.html" target="">Projects</a>
-            <!--<a href="" target="_blank">About</a>
-            <a href="" target="_blank">Skills</a>
-            <a href="" target="_blank">Education</a>   
-            <a href="" target="_blank">Contect</a>-->
+    <header>
+        <a class="name" href="/"><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
+        <div class="header-actions">
+            <nav class="nav-links" aria-label="Main">
+                <a href="/#about">About</a>
+                <a href="/#skills">Skills</a>
+                <a href="/project.html">Projects</a>
+                <a href="/resources/assetResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
         </div>
-        
     </header>
 
-    <section id="coin-toss">
-        <h2>Coin Toss</h2>
-        <img id="coin" src="/resources/flip-a-rs-10-indian-coin-head.png" alt="Coin">
+    <main id="coin-toss">
+        <h1>Coin Toss</h1>
+        <p class="hint">Click the coin, or press Enter or Space, to toss it.</p>
 
-        <p id="result">Click the coin to toss</p>
-        <p id="counter">Total Tosses: 0</p>
-    </section>
-    <script>
-        const coin = document.getElementById("coin");
-        
-        const result = document.getElementById("result");
+        <button id="coin-button" type="button" aria-label="Toss the coin">
+            <img id="coin" src="/resources/flip-a-rs-10-indian-coin-head.png" alt="₹10 coin showing heads">
+        </button>
 
-        let flipping = false;
+        <p id="result" aria-live="polite">Click the coin to toss</p>
 
-        coin.addEventListener("click", tossCoin);
+        <div class="stats">
+            <div class="stat"><span class="stat-value" id="heads-count">0</span><span class="stat-label">Heads</span></div>
+            <div class="stat"><span class="stat-value" id="tails-count">0</span><span class="stat-label">Tails</span></div>
+            <div class="stat"><span class="stat-value" id="total-count">0</span><span class="stat-label">Total tosses</span></div>
+        </div>
 
-        let tossCount = 0;
+        <button id="reset" type="button">Reset</button>
+    </main>
 
-        function tossCoin() {
+    <footer>
+        <p>Copyright &copy; Akash 2026 - Have a nice day</p>
+    </footer>
 
-            if (flipping) return;
-
-            flipping = true;
-
-            tossCount++;
-            document.getElementById("counter").textContent =`Total Tosses: ${tossCount}`;
-
-            coin.classList.add("flip");
-            result.textContent = "Flipping...";
-            const toss = Math.random() < 0.5 ? "Heads" : "Tails";
-
-                setTimeout(() => {
-                    if(toss == "Heads"){
-                    coin.src = "/resources/flip-a-rs-10-indian-coin-head.png";
-                }
-                else{
-                    coin.src = "/resources/flip-a-rs-10-indian-coin-tail.png";
-                }
-            result.textContent = toss;
-            coin.classList.remove("flip");
-            flipping = false;
-            }, 1000);
-        }
-    </script>
+    <script src="/coin_flip.js"></script>
+    <script src="/theme.js"></script>
 </body>
+</html>
