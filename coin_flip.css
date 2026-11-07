@@ -1,24 +1,44 @@
 #coin-toss {
+    flex: 1;
     text-align: center;
-    padding: 40px;
+    padding: 40px 24px;
+    background-color: var(--bg-soft);
 }
 
-#coin {
-    font-size: 100px;
-    cursor: pointer;
-    margin: 20px 0;
+#coin-toss h1 {
+    margin: 0 0 8px 0;
+    font-size: 36px;
 }
-#coin {
+
+.hint {
+    margin: 0;
+    color: var(--text-subtle);
+}
+
+#coin-button {
     display: inline-block;
-    font-size: 100px;
+    margin: 20px 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    perspective: 800px;
+    transition: transform 0.2s ease;
 }
-#coin:hover {
+
+#coin-button:hover {
     transform: scale(1.05);
 }
 
-#flip-btn {
-    padding: 10px 20px;
-    cursor: pointer;
+#coin-button:disabled {
+    cursor: wait;
+}
+
+#coin {
+    display: block;
+    width: min(260px, 70vw);
+    height: auto;
 }
 
 #result {
@@ -26,6 +46,50 @@
     font-weight: bold;
     margin-top: 20px;
 }
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.stat {
+    min-width: 110px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.stat-value {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-subtle);
+}
+
+#reset {
+    margin-top: 24px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: var(--border);
+}
+
 .flip {
     animation: flip 1s ease;
 }
