@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projects | Akash Anand</title>
-    <meta name="description" content="Projects built by Akash Anand: Rain Watch, Digital Diary and a Coin Flip game.">
+    <meta name="description" content="Projects built by Akash Anand: KeepMeDry, Digital Diary and a Coin Flip game.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://connectakash.com/project.html">
     <meta property="og:title" content="Projects | Akash Anand">
@@ -44,14 +44,15 @@
 
             <article class="project-card">
                 <div class="project-frame">
-                    <img src="/resources/rain_watch_logo.png" alt="Rain Watch logo" class="project-image">
+                    <img src="/resources/KeepMeDry_logo.png" alt="KeepMeDry logo" class="project-image">
                 </div>
                 <div class="project-body">
-                    <h2>Rain Watch</h2>
-                    <p>Sends an SMS to your phone every morning when rain is forecast in your area, so you never forget your umbrella.</p>
-                    <ul class="chips"><li>Python</li><li>Weather API</li><li>SMS</li></ul>
+                    <h2>KeepMeDry</h2>
+                    <p>A free Telegram bot that messages you each morning when rain is forecast for your location, so you never forget your umbrella.</p>
+                    <ul class="chips"><li>Python</li><li>Telegram Bot API</li><li>GitHub Actions</li></ul>
                     <div class="project-links">
-                        <a href="https://github.com/iamGNU/rain_watch" target="_blank" rel="noopener">View code</a>
+                        <a href="https://t.me/KeepMeDryBot" class="primary" id="subscribe-keepmedry" target="_blank" rel="noopener">Subscribe</a>
+                        <a href="https://github.com/iamGNU/KeepMeDry" target="_blank" rel="noopener">View code</a>
                     </div>
                 </div>
             </article>
@@ -88,9 +89,32 @@
         </div>
     </main>
 
+    <!-- Shown on computers when someone clicks Subscribe on KeepMeDry -->
+    <dialog id="subscribe-dialog" class="subscribe-dialog" aria-labelledby="subscribe-title">
+        <button type="button" class="dialog-close" data-close aria-label="Close">&times;</button>
+        <h2 id="subscribe-title">Subscribe to KeepMeDry</h2>
+        <p>Get a Telegram message on mornings when rain is on the way.</p>
+
+        <div class="subscribe-options">
+            <div class="subscribe-option">
+                <h3>On this computer</h3>
+                <p>Opens the bot in Telegram Desktop or Telegram Web.</p>
+                <a href="https://t.me/KeepMeDryBot" class="subscribe-open" target="_blank" rel="noopener">Open Telegram</a>
+            </div>
+            <div class="subscribe-option">
+                <h3>On your phone</h3>
+                <p>Scan with your phone's camera.</p>
+                <img src="/resources/keepmedry-qr.svg" alt="QR code linking to t.me/KeepMeDryBot" class="subscribe-qr" width="180" height="180">
+            </div>
+        </div>
+
+        <p class="subscribe-note">Then tap <strong>Start</strong> and share your location or type your city.</p>
+    </dialog>
+
     <footer>
         <p>Copyright &copy; Akash 2026 - Have a nice day</p>
     </footer>
     <script src="/theme.js"></script>
+    <script src="/subscribe.js"></script>
 </body>
 </html>
