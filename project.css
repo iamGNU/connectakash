@@ -93,3 +93,105 @@
     border-color: var(--accent-strong);
     color: var(--bg);
 }
+
+/* ---------- KeepMeDry subscribe dialog ---------- */
+.subscribe-dialog {
+    position: relative;
+    width: min(560px, calc(100vw - 32px));
+    padding: 32px 28px 24px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background-color: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow);
+}
+
+.subscribe-dialog::backdrop {
+    background-color: rgba(3, 7, 18, 0.6);
+}
+
+.subscribe-dialog h2 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+}
+
+.subscribe-dialog p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.dialog-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    color: var(--text-muted);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.dialog-close:hover {
+    background-color: var(--border);
+}
+
+.subscribe-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0 20px;
+}
+
+.subscribe-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background-color: var(--bg-soft);
+}
+
+.subscribe-option h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.subscribe-option p {
+    font-size: 14px;
+}
+
+.subscribe-open {
+    margin-top: auto;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.subscribe-open:hover {
+    background-color: var(--accent-strong);
+}
+
+/* The QR code stays dark-on-white in both themes so phones can scan it. */
+.subscribe-qr {
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.subscribe-note {
+    font-size: 14px;
+    text-align: center;
+}
