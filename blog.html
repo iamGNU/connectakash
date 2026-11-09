@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Akash Anand</title>
+    <meta name="description" content="Akash Anand's blog: thoughts, stories and things he comes across in life, from tech to travel to everything in between.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://connectakash.com/blog.html">
+    <meta property="og:title" content="Blog | Akash Anand">
+    <meta property="og:description" content="Stories, thoughts and little discoveries from everyday life.">
+    <meta property="og:image" content="https://connectakash.com/resources/akash.jpeg">
+    <script>
+        // Apply a saved theme before the page draws, so it doesn't flash.
+        try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/blog.css">
+</head>
+<body>
+    <header>
+        <a class="name" href="/"><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
+        <div class="header-actions">
+            <nav class="nav-links" aria-label="Main">
+                <a href="/#about">About</a>
+                <a href="/#skills">Skills</a>
+                <a href="/project.html">Projects</a>
+                <a href="/blog.html" aria-current="page">Blog</a>
+                <a href="/resources/assetResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="blog">
+        <div class="blog-intro">
+            <h1>Blog</h1>
+            <p>Stories, thoughts and little discoveries from everyday life.</p>
+
+            <!-- Shown by blog.js once the Kit link is set there. -->
+            <div class="subscribe-box" data-subscribe hidden>
+                <a class="subscribe-button" href="#" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    Subscribe by email
+                </a>
+                <p class="subscriber-count" data-subscriber-count hidden></p>
+            </div>
+        </div>
+
+        <!--
+            To add a post:
+            1. Copy blog/hello-world.html to blog/your-post-name.html and write the post.
+            2. Add a new <li class="post-card"> at the TOP of this list (newest first).
+        -->
+        <ol class="post-list" reversed>
+
+            <li class="post-card">
+                <p class="post-meta"><time datetime="2026-11-09">9 November 2026</time> · 2 min read</p>
+                <h2><a href="/blog/hello-world.html">Hello, world: why I'm starting a blog</a></h2>
+                <p>A short hello, and why this blog is about anything and everything rather than one topic.</p>
+                <ul class="chips"><li>Personal</li></ul>
+            </li>
+
+        </ol>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; Akash 2026 - Have a nice day</p>
+    </footer>
+    <script src="/theme.js"></script>
+    <script src="/blog.js"></script>
+    <script data-goatcounter="https://connectakash.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
