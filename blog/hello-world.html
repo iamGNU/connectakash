@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Post title: change it here, in og:title and in the <h1> below. -->
+    <title>Hello, world: why I'm starting a blog | Akash Anand</title>
+    <meta name="description" content="A short hello from Akash Anand, and why his blog is about anything and everything he comes across in life.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://connectakash.com/blog/hello-world.html">
+    <meta property="og:title" content="Hello, world: why I'm starting a blog">
+    <meta property="og:description" content="A short hello, and why this blog is about anything and everything.">
+    <meta property="og:image" content="https://connectakash.com/resources/akash.jpeg">
+    <meta property="article:published_time" content="2026-11-09">
+    <script>
+        // Apply a saved theme before the page draws, so it doesn't flash.
+        try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/blog.css">
+</head>
+<body>
+    <header>
+        <a class="name" href="/"><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
+        <div class="header-actions">
+            <nav class="nav-links" aria-label="Main">
+                <a href="/#about">About</a>
+                <a href="/#skills">Skills</a>
+                <a href="/project.html">Projects</a>
+                <a href="/blog.html" aria-current="page">Blog</a>
+                <a href="/resources/assetResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <article class="post">
+            <a class="back-link" href="/blog.html">&larr; All posts</a>
+
+            <div class="post-header">
+                <h1>Hello, world: why I'm starting a blog</h1>
+                <p class="post-meta">By Akash Anand · <time datetime="2026-11-09">9 November 2026</time> · 2 min read</p>
+                <ul class="chips"><li>Personal</li></ul>
+            </div>
+
+            <div class="post-body">
+                <p>
+                    Welcome to my blog. I'm Akash. You might know me from the rest of this site as an engineer,
+                    but this corner of it isn't about work. It's a place for anything and everything I come
+                    across in life.
+                </p>
+
+                <h2>Why a blog?</h2>
+                <p>
+                    Every day brings small moments worth holding on to: a place that surprised me, a book or
+                    film that stayed with me, a conversation that changed how I see something, or just a
+                    passing thought. Most of them slip away. Writing them down helps me notice them, make
+                    sense of them and keep them.
+                </p>
+
+                <h2>What to expect</h2>
+                <p>
+                    There's no fixed theme. Some posts might be about:
+                </p>
+                <ul>
+                    <li><strong>Places</strong>: trips, walks and the people I meet along the way.</li>
+                    <li><strong>Things I'm enjoying</strong>: books, films, music, food and whatever else catches my eye.</li>
+                    <li><strong>Lessons</strong>: things life taught me, sometimes the hard way.</li>
+                    <li><strong>Random thoughts</strong>: ideas and questions I can't stop thinking about.</li>
+                    <li><strong>The occasional bit of tech</strong>, because that's part of my life too.</li>
+                </ul>
+
+                <blockquote>Write about whatever comes along, and see where it goes.</blockquote>
+
+                <p>
+                    Thanks for stopping by. If you'd like to say hello or share something you came across, you can reach me by
+                    <a href="mailto:akashatwork2002@gmail.com">email</a> or on
+                    <a href="https://www.linkedin.com/in/IamGNU/" target="_blank" rel="noopener">LinkedIn</a>.
+                </p>
+            </div>
+
+            <div class="post-footer">
+                <!-- Shown by blog.js once the Kit link is set there. -->
+                <div class="subscribe-box" data-subscribe hidden>
+                    <h2>Enjoyed this?</h2>
+                    <p class="subscribe-pitch">Get new posts in your inbox. No spam, unsubscribe anytime.</p>
+                    <a class="subscribe-button" href="#" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                        Subscribe by email
+                    </a>
+                    <p class="subscriber-count" data-subscriber-count hidden></p>
+                </div>
+
+                <a class="back-link" href="/blog.html">&larr; Back to all posts</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; Akash 2026 - Have a nice day</p>
+    </footer>
+    <script src="/theme.js"></script>
+    <script src="/blog.js"></script>
+    <script data-goatcounter="https://connectakash.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
