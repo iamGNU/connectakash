@@ -232,6 +232,17 @@ header a {
   color: var(--accent);
 }
 
+.name-link {
+  text-decoration: none;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
+.name-link:hover,
+.name-link:focus-visible {
+  text-decoration: underline;
+}
+
 .role {
   font-size: 20px;
   color: var(--text-muted);
